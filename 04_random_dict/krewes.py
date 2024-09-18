@@ -1,7 +1,7 @@
 # Tawab Berri
 # The Duo-lingos
 # SoftDev
-# K04 - Review on accessing files and using the random library in Python.
+# K04 - Review on dictionaries and using the random library in Python.
 # 2024-09-17
 # time spent: 0:10
 
