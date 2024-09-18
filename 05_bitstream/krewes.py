@@ -5,6 +5,9 @@
 # 2024-09-18
 # time spent: 0:20
 
+# COMMENT: This code does NOT work as intended in the following circumstances:
+# '$$$' or '@@@' found in ducky or devo name
+
 import random
 f = open("krewes.txt", "r")
 text = f.read()
