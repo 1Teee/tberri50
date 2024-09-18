@@ -1,3 +1,10 @@
+# Tawab Berri
+# The Duo-lingos
+# SoftDev
+# K05 - Review on dictionaries and accessing files, as well as splitting strings in Python.
+# 2024-09-18
+# time spent: 0:20
+
 import random
 f = open("krewes.txt", "r")
 text = f.read()
