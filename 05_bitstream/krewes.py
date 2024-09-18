@@ -20,8 +20,8 @@ while i < len(devos):
     dict[i] = devos[i]
     i+=1
     
-#print(dict)
-n = random.randint(0, len(dict) -1)
+print(dict)
+n = random.randint(0, len(dict) -2) #extraneous dictionary entry for "\n" new line character at the end
 #print(n)
 
 devoinfo = dict[n].split("$$$")
