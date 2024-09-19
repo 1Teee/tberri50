@@ -21,23 +21,32 @@ text = f.read()
 print(text)
 
 dict = {}
-pdict = {} # dictionary specific for percentage calculations
+#pdict = {} # dictionary specific for percentage calculations
+rows = 22
+prob = [[0, ""]] * rows
+#print(prob)
+
 jobs = text.split('\n')
 jobs = jobs[1:-1] #first line in a csv is always the column identifiers/labels, last line is "total"
-#totalpercentage = 0   Used for debugging purposes
 
 i = 0 
 while i < len(jobs) - 1:
     if jobs[i][0] != "\"":
         job = jobs[i].split(",")
-        dict[job[0]] = job[1]
-        #totalpercentage += float(job[1])
+        dict[job[0]] = float(job[1])
+        prob[i] = [job[0], float(job[1])]
     else:
         job = jobs[i].split("\"")
-        dict[job[1]] = job[2][1:]
-        #totalpercentage += float(job[2][1:])
+        dict[job[1]] = float(job[2][1:])
+        prob[i] = [job[1], float(job[2][1:])]
+        if (i >= 1):
+            print(prob[i][1])
+            prob[i][1] = prob[i-1][1] + prob[i][1]
     i += 1
-
+    print(i)
+    
 print(dict)
-#print(len(dict))
-#print(totalpercentage)     Used for debugging purposes
+print(prob)
+
+
+
