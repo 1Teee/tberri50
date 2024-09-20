@@ -2,7 +2,7 @@
 # SoftDev
 # K06 - Review on .csv's and accessing files, as well as the random library and dictionaries in Python.
 # 2024-09-18 - 19
-# time spent: 0:50
+# time spent: .8
 
 '''
 DISCO:
@@ -15,8 +15,8 @@ This script first splits up the data into both a 2d list and a dictionary. This 
 different types of data. The 2d list stores lists of length 2, which contain the occupation string, 
 and a percentage value which adds the percentage for the aforementioned occupation onto the 
 percentage in the previous list, to make the whole random selection probability system easier. 
-The script then creates a random integer representing a percentage values, and selects the 
-corresponding percentage value, then prints its respective occupation stored as a string.
+The script then creates a random integer representing a percentage values, and selects the occupation
+in the 2d list that ,then prints its respective occupation stored as a string.
 '''
 
 import random
@@ -49,9 +49,9 @@ while i < len(jobs) - 1:
     i += 1
     
 print(dict)
-#print(prob)
+print(prob)
 
-r = random.randint(0, 99)
+r = random.random() * 99.8
 #print(r)
 ret = ""
 for job in prob:
