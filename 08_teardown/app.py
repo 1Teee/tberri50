@@ -2,7 +2,7 @@
 # SoftDev
 # K08 - Learnination Via Deconstruction
 # 2024-09-20
-# time spent: 
+# time spent: .2
 '''
 DISCO:
 <note any discoveries you made here... no matter how small!>
