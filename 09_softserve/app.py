@@ -31,18 +31,19 @@ def pickrand():
     #print(str(counter) + ": " + name)
 #print(names)
 #print(nums)
-#print(dict)
-    return r.choices(names, nums)[0]
+    return r.choices(names, nums)[0], list
 
 
-
+str = '''The Strawberry Pickers: Tawab Berri, Victor Casado, Kishi Wijaya, Jack Blairn\n\n'''
 
 from flask import Flask
 app = Flask(__name__)           #create instance of class Flask
 
 @app.route("/")                 #assign fxn to route
 def hello_world():
-    return pickrand()
+    ret = pickrand()
+    return str + '\n'.join(ret[1]) + "\n\n" + ret[0]
+    #return pickrand()
 
 if __name__ == "__main__":      # true if this file NOT imported
     app.debug = True            # enable auto-reload upon code change
