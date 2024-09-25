@@ -1,10 +1,31 @@
-#Tawab Berri
+#Victor Casado
 #The Strawberry Pickers
 #SoftDev
 #K09 -- Putting occupations on a website
 #2024-09-23
 #time spent: .5 hours
 import random as r
+
+def getnames():
+    f = open("occupations.csv", "r")
+    string = f.read()
+
+    list = string.split("\n")
+    list = list[1:len(list)-2] #removes example row, total row, and new line row
+
+    names = ""
+#counter = 0
+
+    for i in range(len(list)):
+        if(list[i][0] == "\""):
+            indexcomma = list[i][1:].index("\"") + 2
+            name = list[i][1:indexcomma - 1] #starts at first quote, ends at second quote
+        else:
+            split = list[i].split(",")
+            name = split[0]
+        names+= name + " <br/>"
+    return names
+    
 def pickrand():
     f = open("occupations.csv", "r")
     string = f.read()
@@ -15,7 +36,6 @@ def pickrand():
     names = []
     nums = []
 #counter = 0
-
     for i in range(len(list)):
         if(list[i][0] == "\""):
             indexcomma = list[i][1:].index("\"") + 2
@@ -31,20 +51,18 @@ def pickrand():
     #print(str(counter) + ": " + name)
 #print(names)
 #print(nums)
-    return r.choices(names, nums)[0], list
+#print(dict)
+    return r.choices(names, nums)[0]
 
 
-str = '''The Strawberry Pickers: Tawab Berri, Victor Casado, Kishi Wijaya, Jack Blairn\n\n'''
 
 from flask import Flask
 app = Flask(__name__)           #create instance of class Flask
 
 @app.route("/")                 #assign fxn to route
 def hello_world():
-    ret = pickrand()
-    return str + '\n'.join(ret[1]) + "\n\n" + ret[0]
-    #return pickrand()
+    return "The Strawberry Pickers" + "<br/>" + "Victor Casado, Tawab Berri, Jack Blair, and Kishi Wijaya" + "<br/><br/>"+"Selected occupation: " + pickrand() + "<br/><br/><br/>" + getnames()
 
 if __name__ == "__main__":      # true if this file NOT imported
     app.debug = True            # enable auto-reload upon code change
-    app.run()
+    app.run(port=5001)
