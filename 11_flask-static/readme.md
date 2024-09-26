@@ -34,3 +34,11 @@ path/to/myworkshop$ tree 11_flask-static
 [related](https://ukulelemagazine.com/lessons/uke-lesson-3-chords-and-the-truth-country-songwriting-legend-harlan-howard)  
 [related](https://en.wikipedia.org/wiki/Plain_text)  
 
+Notes:
+@app.route("/") renders: No hablo queso!
+
+@app.route("/static/foo.html") renders: a Not Found error message: The requested URL was not found.
+http://localhost:5000/static/foo.html renders: a random float between 0 and 1
+
+http://localhost:5000/static/foo renders: it downloads a text file containing the plain text in the file "foo"
+http://localhost:5000/static/fixie.html renders: The file with the same name.
