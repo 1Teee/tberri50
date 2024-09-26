@@ -38,6 +38,8 @@ Notes:
 @app.route("/") renders: No hablo queso!
 
 @app.route("/static/foo.html") renders: a Not Found error message: The requested URL was not found.
+http://localhost:5000/static/foo.html (with app.route("/")) renders: "Is this plaintext though?"
+
 http://localhost:5000/static/foo.html renders: a random float between 0 and 1
 
 http://localhost:5000/static/foo renders: it downloads a text file containing the plain text in the file "foo"
