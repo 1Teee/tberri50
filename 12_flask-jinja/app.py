@@ -5,10 +5,11 @@
 """
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Q0:
-<your response here>
+There would probably be an error in the second function, since it requires
+that thing to be imported in order to be executed.
 
 Q1:
-<your response here>
+http://localhost:5000/my_foist_template
 
 Q2:
 <your response here>
