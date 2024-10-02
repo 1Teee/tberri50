@@ -1,0 +1,26 @@
+You can write css in html by using a <style> tag instead of the <head> tag
+Link notation in html: <a href= LINK > TEXT </a>
+csv file does not need values to be comma separated (good practice if exporting, but if just for this program...?)
+Check to make sure you didn't confuse 1s and is when reading your code...
+
+
+
+Egoless programming tldr:
+Everyone has a mix of compliance, ambition, and detachedness (without connotations commonly attached to these words)
+Unfortunately programmers tend to become very detached... except to 'their' code
+Tend to be extensions of self
+But not when the program is criticized / doesn't work
+People tend to avoid criticism of themselves / their actions
+This means programmers blame others / the machine for their code not working, when this is not the case
+
+Need to be vigilant and be aware that flaws in code do exist, it is fact
+Code written is code you have written but not yours
+Get someone else without the biases you have to check the code you have written
+More people having to understand also stops progress from being impeded when the person who wrote the code cannot work
+(less variation in programming time)
+
+working with others increases productivity and understanding
+
+EGO:
+Get others to read over your code
+If working on a group project, make sure everybody contributes, and their contributions are reviewed by others

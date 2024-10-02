@@ -1,0 +1,53 @@
+
+
+<!DOCTYPE html>
+
+<!--
+#Victor Casado
+#VICTOOOOOORIOUS
+#SoftDev
+#K13 -- Putting occupations on a website with html
+#2024-10-1
+#time spent: 2.1 hours
+-->
+
+<html>
+
+  <head>
+    <title> {{ title }} </title>
+    <style>
+      th, td {
+  padding: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    {{heading}}
+    <br>
+    {{TNPG}}
+    <br>
+    {{roster}}
+    <br>
+    <p>
+    Your job is:
+  </p>
+  {{job}}
+
+  <p>All jobs:</p>
+  <table>
+    <tr>
+      <td><b>Job</b></td>
+      <td><b>Percentage</b></td>
+      <td><b>Link for more info</b></td>
+    </tr>
+    {% for i in dictionary %}
+    <tr>
+      <td>{{dictionary[i][0]}}</td>
+      <td>{{dictionary[i][1]}}</td>
+      <td><a href= {{dictionary[i][2]}} > {{dictionary[i][0]}} info </a></td>
+      {% endfor %}
+
+  </table>
+  </body>
+</html>
