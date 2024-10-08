@@ -1,5 +1,5 @@
-#Tawab Berri
-#VICTOOOOOORIOUS - Tawab Berri, Victor Casado, Jacob Lukose, Jack Blair
+#Victor Casado
+#VICTOOOOOORIOUS
 #SoftDev
 #K13 -- Putting occupations on a website with html
 #2024-10-1
@@ -9,7 +9,7 @@ import random as r
 
 
 def pickrand():
-    f = open("data\occupations.csv", "r")
+    f = open("data/occupations.csv", "r")
     string = f.read()
 
     list = string.split("\n")
@@ -40,7 +40,7 @@ def pickrand():
     return r.choices(names, nums)[0]
 
 def gettable():
-    f = open("data\occupations.csv", "r")
+    f = open("data/occupations.csv", "r")
     string = f.read()
 
     list = string.split("\n")
@@ -53,7 +53,7 @@ def gettable():
             indexcomma = list[i][1:].index("\"") + 2
             indexat = list[i][1:].index("@")
             name = list[i][1:indexcomma - 1] #starts at first quote, ends at second quote
-            num = list[i][indexcomma + 1:indexat]
+            num = list[i][indexcomma + 1:indexat+1]
             link = list[i][indexat + 1:]
         else:
             split = list[i].split("@")
