@@ -1,5 +1,5 @@
-#Victor Casado
-#VICTOOOOOORIOUS
+#Tawab Berri
+#VICTOOOOOORIOUS - Tawab Berri, Victor Casado, Jacob Lukose, Jack Blair
 #SoftDev
 #K13 -- Putting occupations on a website with html
 #2024-10-1
