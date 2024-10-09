@@ -19,22 +19,27 @@
 <html>
 
   <head>
-    <title> LOGIN PAGE </title>
+    <title> RESPONSE PAGE </title>
   </head>
 
   <body>
     <h1>
-      Howdy, friends!
+      Welcome, {{user}}
     </h1>
 
-
-    <h3>
-      Enter your username below to proceed.
-    </h3>
-    <form action="/auth" method="POST">
-      <input type="text" name="username">
-      <input type="submit" name="sub1">
-    </form>
+    <br/>
+    <div>
+        <p>psst... it looks like you used the {{form}} request method</p>
+        </br>
+        <p>which is crazy, since GET is used to request data from the page, seen in the url, while
+            POST is used to submit data in the background
+        </p>
+        </br>
+        <p>at least, thats what</p>
+        <h3>The Duolingos (Tawab Berri, Jacob Lukose, and Jack Blair)</h3>
+        <p>think about it</p>
+        
+    </div>
     <br>
   </body>
 
