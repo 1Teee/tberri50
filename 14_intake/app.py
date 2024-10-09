@@ -1,6 +1,9 @@
-# Clyde 'Thluffy' Sinclair
-# SoftDev
-# October 2024
+Tawab Berri
+The Duo-lingos - Tawab Berri, Jacob Lukose, Jack Blair
+SoftDev
+2024-10-07
+K14 - Analyzing the different parts of a user's interactions with a server (i.e. requests), and their causes and effects
+time spent: .3 hrs
 
 # import conventions:
 # list most general first (standard python library)
