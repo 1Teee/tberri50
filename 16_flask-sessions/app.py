@@ -14,14 +14,17 @@ time spent: 1.8 hrs
 from flask import Flask             #facilitate flask webserving
 from flask import render_template   #facilitate jinja templating
 from flask import request           #facilitate form submission
+from flask import session as S
 
 import testmod0
+import secrets
+import os
 
 #the conventional way:
 #from flask import Flask, render_template, request
 
 app = Flask(__name__)    #create Flask object
-
+app.secret_key = secrets.token_hex()#"blah blah blah" #os.urandom(32)
 
 '''
 trioTASK:
@@ -45,37 +48,41 @@ PROTIP: Insert your own in-line comments
 
 @app.route("/", methods=['GET', 'POST'])
 def disp_loginpage():
-    print("one\n\n\n")
-    print("***DIAG: this Flask obj ***")
-    print(app)
-    print("***DIAG: request obj ***")
-    print(request)
-    print("***DIAG: request.args ***")
-    print(request.args)
+    #print("one\n\n\n")
+    #print("***DIAG: this Flask obj ***")
+    #print(app)
+    #print("***DIAG: request obj ***")
+    #print(request)
+    #print("***DIAG: request.args ***")
+    #print(request.args)
     #print("***DIAG: request.args['username']  ***") this pair doesnt work because the variable "username" probably hasnt been defined yet.
     #print(request.args['username'])
-    print("***DIAG: request.headers ***")
-    print(request.headers)
+    #print("***DIAG: request.headers ***")
+    #print(request.headers)
     return render_template( 'login.html' )
 
 
 @app.route("/auth", methods=['GET', 'POST'])
 def authenticate():
-    print("\ntwo\n\n\n")
-    print("***DIAG: this Flask obj ***")
-    print(app)
-    print("***DIAG: request obj ***")
-    print(request)
-    print("***DIAG: request.args ***")
-    print(request.args)
+    #print("\ntwo\n\n\n")
+    #print("***DIAG: this Flask obj ***")
+    #print(app)
+    #print("***DIAG: request obj ***")
+    #print(request)
+    #print("***DIAG: request.args ***")
+    #print(request.args)
     #print("***DIAG: request.args['username']  ***")
     #print(request.args['username'])
-    print("***DIAG: request.headers ***")
-    print(request.headers)
+    #print("***DIAG: request.headers ***")
+    #print(request.headers)
     if request.method == 'POST':
         u = request.form['username']
     elif (request.method == 'GET'): u = request.args['username']
-    request.cookies.get('username')
+    
+    
+    S['password'] = request.cookies.get('password')
+    S['KEY'] = app.secret_key
+    
     return render_template( 'response.html', user = u, form = request.method)  #response to a form submission
 
 
