@@ -1,6 +1,6 @@
     
     body{
-        background-color: grey
+        background-color: rgb(135, 135, 135)
     }
     h1 {
     color: white;
@@ -24,4 +24,10 @@
     #ttt{
         color: white;
        
+    }
+    footer{
+           text-align: right;
+           background-color:#595858;
+           color: rgb(135, 135, 135);
+           
     }
