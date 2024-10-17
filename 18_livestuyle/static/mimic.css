@@ -1,0 +1,33 @@
+    
+    body{
+        background-color: rgb(135, 135, 135)
+    }
+    h1 {
+    color: white;
+    text-align: center;
+    padding: 5px;
+    background-color: rgb(190, 190, 190)
+    }
+
+    .main{
+        margin-left: 200px;
+    }
+    h2{
+        margin-top:-125px
+    }
+
+    h3{
+        margin-left: 5px;
+        width: 100px;
+    }
+
+    #ttt{
+        color: white;
+       
+    }
+    footer{
+           text-align: right;
+           background-color:#595858;
+           color: rgb(135, 135, 135);
+           
+    }
