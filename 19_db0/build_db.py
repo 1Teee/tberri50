@@ -1,53 +1,52 @@
-'''
-Tawab Berri
-The Duo-lingos - Tawab Berri, Jacob Lukose, Jack Blair
-SoftDev
-2024-10-18
-K19 - SQLite basics
-time spent: 2.8 hrs
-'''
-import sqlite3   #enable control of an sqlite database
-import csv       #facilitate CSV I/O
+# Victor Casado - The Flying Mice
+#SoftDev
+#skeleton/stub :: SQLITE3 BASICS
+#Oct 20 2024 
 
-import pprint as p
+import sqlite3
+import csv
 
-
-DB_FILE="discobandit.db"
+DB_FILE = "discobandit.db"
 
 db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
-c = db.cursor()               #facilitate db ops -- you will use cursor to trigger db events
+c = db.cursor()  #facilitate db ops -- you will use cursor to trigger db events
 
-#==========================================================
-students = []
-courses = []
-with open('students.csv', 'r') as f:
-    read = csv.DictReader(f)
-    for row in read:
-        students.append(row)
-        print(row)
+# ==========================================================
 
-with open('courses.csv', 'r') as ftwo:
-    readtwo = csv.DictReader(ftwo)
-    for row in readtwo:
-        courses.append(row)
-p.pprint(students)
-p.pprint(courses)
+# create 'students' table if it doesn't exist
+c.execute('''
+CREATE TABLE IF NOT EXISTS students (
+    id INTEGER PRIMARY KEY,  -- 'id' is the unique identifier (PRIMARY KEY)
+    name TEXT,               -- 'name' is a text field
+    age INTEGER              -- 'age' is an integer field
+);
+''')
 
-c.execute("CREATE TABLE students (code TEXT, mark INTEGER, id INTEGER PRIMARY KEY)")
-for i in students:
-    name = i['name']
-    age = int(i['age'])
-    id = int(i['id'])
-    c.execute(f"INSERT INTO students VALUES ({name}, {age}, {id})")
+# insert students data into db
+with open('students.csv', newline="") as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        c.execute('INSERT OR IGNORE INTO students (id, name, age) VALUES (?, ?, ?)', 
+                  (row['id'], row['name'], row['age']))
 
-c.execute("CREATE TABLE courses (code TEXT, mark INTEGER, id INTEGER)")
-for i in courses:
-    code = i['code']
-    mark = int(i['mark'])
-    id = int(i['id'])
-    c.execute(f"INSERT INTO courses VALUES ({code}, {mark}, {id})")
+# Ccreate 'courses' table if it doesn't exist
+c.execute('''
+CREATE TABLE IF NOT EXISTS courses (
+    student_id INTEGER,      -- links to the student's id in the 'students' table
+    code TEXT,               -- 'code' represents the course name
+    mark INTEGER,            -- 'mark' represents the student's grade
+    FOREIGN KEY(student_id) REFERENCES students(id)  -- ensures that student_id exists in 'students' table
+);
+''')
 
-#==========================================================
+# insert courses data into db
+with open('courses.csv', newline="") as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        c.execute('INSERT OR IGNORE INTO courses (student_id, code, mark) VALUES (?, ?, ?)', 
+                  (row['id'], row['code'], row['mark']))
+
+# ==========================================================
 
 db.commit() #save changes
-db.close()  #close database
+db.close() # close db
