@@ -1,7 +1,8 @@
-# Victor Casado - The Flying Mice
+# Tawab Berri - The Duo-lingos
 #SoftDev
-#skeleton/stub :: SQLITE3 BASICS
-#Oct 20 2024 
+#K19 : SQLITE3 BASICS
+#Oct 20 2024
+#time spent: 3.4 hrs
 
 import sqlite3
 import csv
